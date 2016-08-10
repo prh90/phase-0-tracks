@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Party reservation service</title>
+</head>
+  <body>
+    <form name= "Party" action= "success.html" method="post">
+      <fieldset>
+        <div>
+        <label>Full name:</label>
+        <input type="text" name="fullname">
+        </div>
+
+        <div>
+        <label>Phone Number:</label>
+        <input type="number" name="number">
+        </div>
+
+      </fieldset>
+
+      <fieldset>
+        <div>
+        <label>Number of group</label>
+        <select>
+          <option value= "Party">1</option>
+          <option value= "Party">2</option>
+          <option value= "Party">3</option>
+          <option value= "Party">4</option>
+          <option value= "Party">5</option>        
+        </select>
+      </div>
+      <div>
+        <label>Choose a date:</label>
+        <input type="date" name="date">
+      </div>
+      <div>
+        <label>Choose a time</label>
+        <input type="time" name="time">
+      </div>
+      <div>
+        <textarea rows="5" cols="50">Any special requests?</textarea>
+      </div>
+      <div>
+        <input type="checkbox" name="cb-agree" value= "agree">
+        "
+              I am ready to PARTY!!!!!!!
+              "
+      </div>
+      </fieldset>
+      <button type= "submit">Lets roll</button>
+    </form>
+  </body>
+</html>
