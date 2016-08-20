@@ -1,3 +1,13 @@
-#Octopus {
-  ;
+#octopus {
+  position: absolute;
+  margin: 8cm 8cm 8cm 8cm;
+}
+#hat {
+  position: absolute;
+  margin: 6cm 6cm 8cm 7.5cm;
+}
+#glasses {
+  position: absolute;
+  margin: 10.75cm 9cm 9cm 9.2cm;
+  z-index: 1;
 }
