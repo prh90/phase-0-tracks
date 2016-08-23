@@ -1,0 +1,10 @@
+Eating algorithm 
+
+-Grab a plate (plate with food)
+-Pick up utinsels according to food
+-Grab eating porting with utensil and put in mouth
+	-chew 
+		-If not ready to be digested continue chewing.
+		-If ready then swallow food.
+-Eat until full
+	-Wash dish. 
