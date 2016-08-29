@@ -8,32 +8,6 @@ Encryption
     2. Otherwise change to next letter in the alphabet
     3. Add it to a new string
     4. Return to 2.1
-
-=end
-puts "We will show you the encryption and decryption of your password"
-  
-puts "Enter password:"
-u_password = gets.chomp
-
-
-index = 0
-
-26.times ??
-=begin  
-while index < u_password.length
-  if 
-    u_password[index] == "z"
-    u_password[index] = "a" #we do not want to go into double alpha
-  elsif
-    u_password[index] == " "
-    u_password[index] = " " #Finding specific letters"agent".index("a") "agent".index("z")
-
-  elsif
-    u_password[index] = u_password[index].next  #updates
-  end
-  index += 1 #increments
-end
-p u_password
 =end
 
 def encrypt(u_password)
