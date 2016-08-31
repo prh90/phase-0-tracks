@@ -9,7 +9,7 @@
 5. Print data
 =end
 
-puts "--Please enter clients information--"
+puts "--Please enter clients information--\n\n"
 
 puts "Clients name: "
 name = gets.chomp.to_s
@@ -17,11 +17,11 @@ name = gets.chomp.to_s
 puts "Clients age: "
 age = gets.chomp.to_i
 
+puts "Number of children: "
+kids = gets.chomp.to_i
+
 puts "Desired theme: "
 theme = gets.chomp.to_s
-
-puts "Preferred color: "
-color = gets.chomp.to_s
 
 puts "Matching rooms? (Yes/ No)"
 matching = gets.chomp.to_s
@@ -32,3 +32,13 @@ elsif matching == "no".to_s
   then  puts "Please specify room ideas: "
   specify = gets.chomp.to_s
 end
+
+designer_info = {
+  "Name" => name,
+  "Age" => age,
+  "Kids" => kids,
+  "Theme" => theme,
+  "Matching" => matching,
+  "Specify" => specify
+}
+p designer_info
