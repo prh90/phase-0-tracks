@@ -1,20 +1,4 @@
 # Method to create a list
-def grocery_list(str)
-  list = {
-
-    :item1 => q1,
-    :item2 => q2,
-   
-  }
-
-  
-  list[:items] << str.split
-
-list.each do |k, v|
-  grocery_list(item, quantity)
-end
-
-end
  
 
 
@@ -56,76 +40,60 @@ end
 
 
 
-#str = "carrots apples cereal pizza carrots"
+def grocery_list!(list, food)
+  list[food] = []
+end
 
-=begin
-def list(str)
-  # p str
-  arr = str.split
-  # p arr
+list = {}
+
+def add_quantity!(list, food, quantity)
+  list[food] << quantity
+end
+def delete_item!(list, food)
+  list.delete_if{|key, value| key == food}
+end
   
-  grocery_list = Hash.new(0)
-  # p grocery_list
+# User Interface
+def print_list(list)
+  list.keys.each_with_index{|item, index, quantity| puts "#{index} - #{item.capitalize}, qty:#{list[item]} #{quantity}" } 
+end
+
+# Lets user add to list
+add_food = true
+
+while add_food
+  puts "-------------------------------------------------"
+  puts "\nType the item you wish to add to the list(or type 'done'):\n"
+  food = gets.chomp
+  break if food.downcase == "done"
   
-  arr.each do |x|
-    grocery_list[x] += 1
-  end
-  return grocery_list
+  grocery_list!(list, food)
+  print_list(list)
   
 end
 
-# list(str)
-=end
 
-def list
-  grocery_list = {
-  "lemonade": 2,
-  "tomatoes": 3,
-  "onions": 1,
-  "ice cream": 4
-  }
+loop do
+  puts "-------------------------------------------------"
+  puts "\nEnter the number from the list you would like to add quantity (or type 'done'):\n"
+  item_index = gets.chomp
+  break if item_index.downcase == "done"
+  food_indx = item_index.to_i
+  puts "How much of this item would you like?"
+  amount = gets.chomp.to_i
+  add_quantity!(list, list.keys[food_indx], amount)
+  
+  print_list(list)
 end
+loop do
+  puts "-------------------------------------------------"
+  puts "\nEnter the number from the list you would like to delete (or type 'done'):\n"
+  item_index_d = gets.chomp
+  break if item_index_d.downcase == "done"
+  food_indx_del = item_index_d.to_i
 
-#print list method
-def print_list(grocery_list)
-  grocery_list.each {|item, quantity| puts "#{item.capitalize}, Qty: #{quantity}" } 
+  delete_item!(list, list.keys[food_indx_del])
+  puts "Item #{food_indx_del} has been deleted"
+  print_list(list)
 end
-
-#print_list(list)
-
-#item = "milk"
-
-def add_item(str, item)
-  # str << ' ' << string
-  str << " #{item}"
-  return str
-end
-
-#list(add_item(str, item))
-
-del_string = "carrots"
-
-def del_item(grocery_list, item)
-  grocery_list = grocery_list.delete_if {|key, value| key == item}
-  # p grocery_list
-  return grocery_list
-end
-del_item(list(str), del_string)
-
-item = "apples"
-quantity = 5
-
-def quantity_update(grocery_list, item, quantity)
-  grocery_list[item] = quantity
-  return grocery_list
-end
-
-quantity_update(list(str), item, quantity)
-
-
-
-
-
-
-
-
+print_list(list)
