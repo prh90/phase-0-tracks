@@ -51,7 +51,7 @@ class Programmer
 end
 
 programmers = []
-15.times do 
+50.times do 
   programmers << Programmer.new()
 end
 programmers.each do |programmer|
