@@ -20,7 +20,7 @@ class Santa
   def celebrate_birthday
     @age += 1 
   end
-  
+
   def get_mad_at(deer)
   @reindeer_ranking.delete(deer)
   @reindeer_ranking << deer
@@ -78,6 +78,3 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
   ex_age = rand(140)
   puts "\nThis santa identifies as #{ex.gender}, ethinicity is #{ex.ethnicity} and is #{ex_age} years old.\n"
 end
-  
-
-
