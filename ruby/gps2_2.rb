@@ -8,11 +8,8 @@
   # set default quantity(set equal to 1)
 def create_list(val)
   grocery_list = {}
-  val.split.each do |x|
-    grocery_list[x.to_sym] = 1
-  end
-  # val.split(" ").map{|x| list[x.to_sym] =1}
-  return grocery_list
+  val.split(' ').map{|x| grocery_list[x.to_sym] =1}
+  grocery_list
 end
 
 
@@ -24,7 +21,6 @@ end
 
 def add_item(grocery_list, item)
   grocery_list[item.to_sym] = 1
-  # p grocery_list
 end
 
 
@@ -36,8 +32,6 @@ end
 
 def del_item(grocery_list, item)
   grocery_list = grocery_list.delete_if {|key, value| key == item.to_sym}
-  # p grocery_list
-  return grocery_list
 end
 
 
@@ -49,7 +43,6 @@ end
 # output: returning updated list.
 def quantity_update(grocery_list, item, quantity)
   grocery_list[item.to_sym] = quantity
-  return grocery_list
 end
 
 
@@ -63,15 +56,43 @@ def print_list(grocery_list)
 end
 
 
+
+
+# USER INTERFACE
+puts "Please enter what items you wish to add to your list (or enter done)"
+items = gets.chomp
+
+u_list = create_list(items)
+puts "\nYour list so far"
+puts 
+print_list(create_list(items))
+
+
 loop do
   puts "-------------------------------------------------"
-  puts "\nEnter the number from the list you would like to add quantity (or type 'done'):\n"
-  item_index = gets.chomp
-  break if item_index.downcase == "done"
-  food_indx = item_index.to_i
-  puts "How much of this item would you like?"
-  amount = gets.chomp.to_i
-  add_quantity!(list, list.keys[food_indx], amount)
+  puts "\nEnter the what you would like to do to your list? ('add' item, 'delete' item, 'update' quantity or just enter 'done'):\n"
+  update = gets.chomp
+  break if update.downcase == "done"
   
-  print_list(list)
+  if update.downcase == "add"
+    puts "What would you like to add to your list?"
+    add = gets.chomp
+    add_item(u_list, add)
+    p print_list(u_list)
+  elsif update.downcase == "delete"
+    puts "What would you like to delete from your list?"
+    rem = gets.chomp
+    del_item(u_list, rem)
+    p print_list(u_list)
+  elsif update.downcase == "update"
+    puts "What item would you like to update the quantity to?"
+    item = gets.chomp
+    puts "What is your new quantity update for #{item}?"
+    qty = gets.chomp.to_i
+    quantity_update(u_list,item, qty)
+    p print_list(u_list)
+  else 
+    puts "I don't understand please enter the correct option"
+  end
 end
+print_list(u_list)
