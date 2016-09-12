@@ -1,5 +1,5 @@
 class GuessingGame
-  attr_reader :word, :guess_count, :game_over
+  attr_reader :word, :guess_count, :game_over, :user_guesses
   attr_reader :guess_count
 
   def initialize(word)
@@ -10,6 +10,8 @@ class GuessingGame
     @user_guesses = [] #To save what the user entered
     @won = false
     @lost = false
+    g_array = []
+    g_array << @word.gsub('_',' ')
 
   end
 
@@ -39,14 +41,9 @@ class GuessingGame
     end
   end
 
-  def final_result(guess)
-    # Tracks if user won or lost and displays proper message
-  end
-
 end
 
 puts "Welcome to the Word Guessing Game!"
-
 puts "Please enter a word to start the game"
 word = gets.chomp.split('')
 
