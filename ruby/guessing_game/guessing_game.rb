@@ -8,27 +8,26 @@ class GuessingGame
     @guess_limit = word.length #limits the guessing to length of word
     @guess_count = 0 #starts counter at 0
     @user_guesses = [] #To save what the user entered
+    @under_array = []
+    @word.times(@under_array << "_") #change the word with underscore
     @won = false
     @lost = false
-    guess_array = []
-    guess_array << @word.tr(" ","_") #change the word with underscore
 
   end
 
-  def letter_check(guess)
-    # Checks guess with word
+  def guess_store(guess)
+    # Receives guess and stores it into array
     @guess_count += 1
-    @g_array.include? guess
+    @user_guesses << guess.downcase
+
   end
 
-  def letter_reveal(guess)
-      # If user guesses correctly then the letter will be revealed.
 
   end
 
   def ret_message
     if @won == true
-    puts "You won! you guessed the word #{@word} in #{@guess_count}"
+    puts "You won! you guessed the word #{@word} in #{@guess_count} guesses"
     end
     if @lost == true
     puts "You lost! it was so easy, it was #{@word}"
