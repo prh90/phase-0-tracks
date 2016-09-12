@@ -2,8 +2,9 @@
 
 require_relative 'guessing_game'
 
+let(:game) {GuessingGame.new}
+
 describe GuessingGame do 
-  let(:game) {GuessingGame.new}
 
   it "Returns the word" do
     expect(game.word("Pablo")).to eq "Pablo"
