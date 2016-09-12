@@ -2,10 +2,12 @@ class GuessingGame
   attr_reader :final_result
   attr_reader :game_over
 
-  def initialize
+  def initialize(word)
     @word = word
     @game_over = false
     @guess_limit = word.length
+    @user1 = []
+    @user2 = []
 
   end
 
@@ -41,7 +43,6 @@ class GuessingGame
 end
 
 puts "Welcome to the Word Guessing Game!"
-
 
 puts "Please enter a word to start the game"
 word = gets.chomp.split('')
