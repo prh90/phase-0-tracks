@@ -1,5 +1,5 @@
 class GuessingGame
-  attr_reader :word, :guess_count, :game_over, :user_guesses
+  attr_reader :word, :guess_count, :game_over, :user_guesses, :guess_array, :guess_limit
   attr_reader :guess_count
 
   def initialize(word)
@@ -10,21 +10,15 @@ class GuessingGame
     @user_guesses = [] #To save what the user entered
     @won = false
     @lost = false
-    g_array = []
-    g_array << @word.gsub('_',' ')
+    guess_array = []
+    guess_array << @word.tr(" ","_") #change the word with underscore
 
   end
 
   def letter_check(guess)
     # Checks guess with word
     @guess_count += 1
-    if word[index] == guess
-      @game_over = true
-    elsif
-      @user_guesses << guess
-    else
-      false
-    end
+    @g_array.include? guess
   end
 
   def letter_reveal(guess)
