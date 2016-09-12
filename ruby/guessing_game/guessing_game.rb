@@ -1,13 +1,15 @@
 class GuessingGame
-  attr_reader :final_result
-  attr_reader :game_over
+  attr_reader :word, :guess_count, :game_over
+  attr_reader :guess_count
 
   def initialize(word)
-    @word = word
-    @game_over = false
-    @guess_limit = word.length
-    @user1 = []
-    @user2 = []
+    @word = word #accessible throughout
+    @game_over = false #does not end game until its true
+    @guess_limit = word.length #limits the guessing to length of word
+    @guess_count = 0 #starts counter at 0
+    @user_guesses = [] #To save what the user entered
+    @won = false
+    @lost = false
 
   end
 
@@ -16,14 +18,11 @@ class GuessingGame
     @guess_count += 1
     if word[index] == guess
       @game_over = true
+    elsif
+      @user_guesses << guess
     else
       false
     end
-  end
-
-  def user_switch(guess)
-    # If user guesses correct continue
-    # If user guesses wrong switch to other user
   end
 
   def letter_reveal(guess)
@@ -32,8 +31,12 @@ class GuessingGame
   end
 
   def ret_message
-    puts "You won! you guessed the word #{@word}"
+    if @won == true
+    puts "You won! you guessed the word #{@word} in #{@guess_count}"
+    end
+    if @lost == true
     puts "You lost! it was so easy, it was #{@word}"
+    end
   end
 
   def final_result(guess)
