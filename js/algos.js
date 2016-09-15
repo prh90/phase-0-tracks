@@ -15,18 +15,19 @@
 //have both objects compare keys, if a match is found 
 //reassign match with true
 
-function compare(object1, object2) {
-  var match = false;
-  for (var obj1Key in object1) {
-     if (object2.hasOwnProperty(obj1Key)) {
-      if (object1[obj1Key] === object2[obj1Key]) {
-         match = true;
-        }
-      }
-    }
-    console.log(match);
-  }
- compare({name: "Steven", age: 54}, {name: "Tamir", age: 54});
+// function compare(object1, object2) {
+//   var match = false;
+//   for (var obj1Key in object1) {
+//      if (object2.hasOwnProperty(obj1Key)) {
+//       if (object1[obj1Key] === object2[obj1Key]) {
+//          match = true;
+//         }
+//       }
+//     }
+//     console.log(match);
+//   }
+//  compare({name: "Steven", age: 54}, {name: "Tamir", age: 54});
  
-
+var randnum=Math.floor(Math.random()*11)
+console.log(randnum)
 
