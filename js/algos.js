@@ -8,7 +8,7 @@
 function find(arr){
   console.log(arr.sort(function(a, b) { return b.length - a.length})[0]);
 }
-find(["long phrase","longest phrase","longer phrase"]);
+// find(["long phrase","longest phrase","longer phrase"]);
 
 //____________________________________________________________________________
 //Take two objects
@@ -67,5 +67,9 @@ function newArr(num){
 // ====================================================================
 //                            DRIVER CODE
 for (i = 0; i < 10; i++){
-  
+  var test = newArr(2);
+  console.log("The array we generated is:");
+  console.log(test);
+  console.log("The longest word in the string is:");
+  find(test);
 }
