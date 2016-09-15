@@ -27,7 +27,20 @@
 //     console.log(match);
 //   }
 //  compare({name: "Steven", age: 54}, {name: "Tamir", age: 54});
+
+// 
  
-var randnum=Math.floor(Math.random()*11)
-console.log(randnum)
+// var randnum=Math.floor(Math.random()*11)
+// console.log(randnum)
+
+function newArr(){
+  var randNum=Math.floor(Math.random()*11)
+  var letters = "abcdefghijklmnopqrstuvwxyz";
+  var word = "";
+  for (i = 0; i < randNum; i++) { 
+    word += letters.charAt(Math.floor(Math.random()*letters.length));
+  }
+  return word;
+}
+newArr()
 
