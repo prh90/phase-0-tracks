@@ -3,6 +3,7 @@
   -Name
   -Age 
   -# kids
+  -Theme
   -Matching rooms?
   -Specify if user does not want matching rooms
 2. Save new information into variables
@@ -13,3 +14,36 @@
   b. if so correct the desired input then end
 6. Print data 
 =end
+puts "--Please enter clients information--"
+
+puts "Enter clients name:"
+name = gets.chomp
+
+puts "Enter clients age:"
+age = gets.chomp.to_i
+
+puts "Enter number of children client has:"
+kids = gets.chomp.to_i
+
+puts "Enter clients desired theme:"
+theme = gets.chomp
+
+puts "Enter if client would like all rooms matching or not (yes/no)"
+match = gets.chomp
+
+if match.downcase == "yes"
+  then specify = nil
+elsif match.downcase == "no".to_s
+  then  puts "Please specify room ideas: "
+  specify = gets.chomp
+end
+
+designer_info = {
+  :name => name,
+  :age => age,
+  :kids => kids,
+  :decor_theme => theme,
+  :matching => match,
+  :other => specify
+}
+puts designer_info
