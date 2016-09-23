@@ -46,4 +46,6 @@ designer_info = {
   :matching => match,
   :other => specify
 }
-puts designer_info
+designer_info.each do |key|
+  puts "\n#{key}"
+end
