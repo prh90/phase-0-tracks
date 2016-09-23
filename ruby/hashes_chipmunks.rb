@@ -43,9 +43,27 @@ designer_info = {
   :age => age,
   :kids => kids,
   :decor_theme => theme,
-  :matching => match,
+  :match => match,
   :other => specify
 }
 designer_info.each do |key|
   puts "\n#{key}"
 end
+
+puts "\n\n\nCaught any mistakes? You can fix them by simply typing the desired area that needs to be changed (:name, :age, :kids, :decor_theme, :match) if no changes need to be made please enter 'none'"
+fix = gets.chomp.to_sym
+
+if fix == :none
+  puts "Thank you!"
+elsif designer_info.include? fix
+  puts "Enter new data #{fix}"
+  update = gets.chomp
+  designer_info[fix.to_sym] = update
+else 
+  puts "Sorry I did not understand."
+end
+
+designer_info.each do |key|
+  puts "\n#{key}"
+end
+
