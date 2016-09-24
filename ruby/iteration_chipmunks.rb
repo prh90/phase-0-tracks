@@ -66,3 +66,55 @@ puts "\nAfter remove"
 p result
 # __________________________________________________
 
+test_hash = {
+  'Batman'=> 'Christian Bale',
+  'Iron-man'=> 'Robert Downey Jr.',
+  'Deadpool'=> 'Ryan Reynolds',
+  'Ant-Man' => 'Paul Rudd',
+  'The Joker' => 'Heath ledger',
+  'Lazy-man'=> 'Pablo Hernandez'
+}
+
+puts "\nHash before delete------------------\n\n"
+
+test_hash.each  do |key,val| 
+  puts "#{key} was played by #{val}" 
+end
+
+test_hash.delete_if{|key,val| key == 'Lazy-man'}
+
+puts "\nHash after delete------------------\n\n"
+
+test_hash.each  do |key,val| 
+  puts "#{key} was played by #{val}"
+end
+
+puts "\nHash before Keep------------------\n\n"
+
+test_hash.each  do |key,val| 
+  puts "#{key} was played by #{val}"
+end
+
+test_hash.keep_if {|key,val| key != 'Iron-man'}
+
+puts "\nHash after Keep------------------\n\n"
+
+test_hash.each  do |key,val| 
+  puts "#{key} was played by #{val}"
+end
+
+puts "\nHash before select------------------\n\n"
+
+test_hash.each  do |key,val| 
+  puts "#{key} was played by #{val}"
+end
+
+final = test_hash.select do |key, value|
+  key != 'Batman'
+end
+
+puts "\nHash after select------------------\n\n"
+
+final.each  do |key,val| 
+  puts "#{key} was played by #{val}"
+end
