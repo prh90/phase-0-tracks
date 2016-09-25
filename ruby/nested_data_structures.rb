@@ -45,7 +45,7 @@ chivas = {
     }
 }
 
-# chivas[:franchise][:achievements][:league_titles]
+# chivas[:franchise][:achievements][:cup_titles]
 # => 11
 
 # chivas[:owner][:f_owned][1]
