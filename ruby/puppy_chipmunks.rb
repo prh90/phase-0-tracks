@@ -9,6 +9,7 @@ Eye count: 2
 Leg count: 4
 weight: varies
 Height: varies
+eye-color: varies
 Color: varies
 Hair length: varies
 _____________________________
