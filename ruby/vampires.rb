@@ -5,7 +5,7 @@ def vam_check
     
     
     puts "\nWhat is your name?"
-    name = gets.chomp.to_s 
+    name = gets.chomp 
     
     puts  "How old are you?"
     age = gets.chomp.to_i
@@ -14,10 +14,10 @@ def vam_check
     year = gets.chomp.to_i
     
     puts "The cafeteria is serving garlic bread, would you like some? (yes/no)"
-    garlic = gets.chomp.to_s
+    garlic = gets.chomp
     
     puts "Would you like to enroll in the company’s health insurance? (yes/no)"
-    insurance = gets.chomp.to_s
+    insurance = gets.chomp
     
     
     current_year = 2016
@@ -44,21 +44,25 @@ def vam_check
       insurance = false
     end
     
+    # user_input = false
+    # until user_input
+    #   puts "\nDo you have any allergies? Type -done- when complete."
+    #   allergies = gets.chomp
+    #     if allergies.downcase == "done" || allergies.downcase == "sunshine"
+    #       user_input = true
+    #     else puts "Please enter another allergy"
+    #     end 
+    #   end
+    # end
     user_input = false
-    until user_input
+    loop do 
       puts "\nDo you have any allergies? Type -done- when complete."
-      allergies = gets.chomp.to_s
-        if allergies.downcase == "done" || allergies.downcase == "sunshine"
-          user_input = true
-        else puts "Please enter another allergy"
-        end 
-      end
-    end
+      allergies = gets.chomp
     
     
     case
     
-    when name = true || user_input == true
+    when name == true || user_input == true
       puts "Definitely a vampire"
     
     when name == false && (age == age_check) && (garlic == true || insurance == true)
