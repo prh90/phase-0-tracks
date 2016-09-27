@@ -1,5 +1,6 @@
 # Method to create a list
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 
 
@@ -73,6 +74,8 @@ while add_food
   
 end
 =======
+=======
+>>>>>>> 265ff740d919fea78e76d5c4cf41b900fd2a5aef
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps: 
 # Create an empty hash 
@@ -140,11 +143,15 @@ u_list = create_list(items)
 puts "\nYour list so far"
 puts 
 print_list(create_list(items))
+<<<<<<< HEAD
 >>>>>>> ruby
+=======
+>>>>>>> 265ff740d919fea78e76d5c4cf41b900fd2a5aef
 
 
 loop do
   puts "-------------------------------------------------"
+<<<<<<< HEAD
 <<<<<<< HEAD
   puts "\nEnter the number from the list you would like to add quantity (or type 'done'):\n"
   item_index = gets.chomp
@@ -169,6 +176,8 @@ loop do
 end
 print_list(list)
 =======
+=======
+>>>>>>> 265ff740d919fea78e76d5c4cf41b900fd2a5aef
   puts "\nEnter the what you would like to do to your list? ('add' item, 'delete' item, 'update' quantity or just enter 'done'):\n"
   update = gets.chomp
   break if update.downcase == "done"
@@ -194,5 +203,9 @@ print_list(list)
     puts "I don't understand please enter the correct option"
   end
 end
+<<<<<<< HEAD
 print_list(u_list)
 >>>>>>> ruby
+=======
+print_list(u_list)
+>>>>>>> 265ff740d919fea78e76d5c4cf41b900fd2a5aef
