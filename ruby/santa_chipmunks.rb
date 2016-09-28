@@ -47,6 +47,19 @@ class Santa
 # eat_milk_and_cookies("Peanut butter cookie")
 # ____________________________________________
 end
+
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+100.times do
+  ex = Santa.new(example_genders.sample, example_ethnicities.sample)
+  ex_age = rand(140)
+  puts "This Santa identifies as #{ex.gender}, ethinicity is #{ex.ethnicity} and is #{ex_age} years old.\n"
+end
+
+
+# __________________________________________________________________________________________________
 # santas = []
 # example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 # example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
@@ -69,12 +82,3 @@ end
 # p lazy_man.get_mad_at("Vixen")
 # p lazy_man.age=(5)
 # p lazy_man.celebrate_birthday
-
-example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-
-100.times do
-  ex = Santa.new(example_genders.sample, example_ethnicities.sample)
-  ex_age = rand(140)
-  puts "This Santa identifies as #{ex.gender}, ethinicity is #{ex.ethnicity} and is #{ex_age} years old.\n"
-end
