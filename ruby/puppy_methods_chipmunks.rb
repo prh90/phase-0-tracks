@@ -46,3 +46,38 @@
 # spot.dog_years(1)
 # spot.chase_cat
 # spot.initialze
+
+
+class Breakfast
+  def initialize
+    puts "Initializing Breakfast ..."
+    @feeling = ["hyped", "sleepy", "ready to jump the moon"].sample
+    @cups = rand(30)
+    @names = ["Omar", "Pablo", "Ty"].sample
+  end
+
+  def drink
+    puts "#{@name} drinks #{@cups} cups of coffee!"
+  end
+
+  def status
+    puts "I feel #{@feeling}"
+  end
+end
+
+#Driver code
+
+# joe = Breakfast.new # Testing out new instance
+# joe.drink("He-man")
+# joe.status
+
+breakfast = []
+50.times do
+  breakfast << Breakfast.new()
+end
+p breakfast
+
+breakfast.each do |user|
+  puts user.drink
+  puts user.status
+end
