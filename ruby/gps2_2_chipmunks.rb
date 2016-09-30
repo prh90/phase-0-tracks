@@ -8,6 +8,19 @@
   # print the list to the console [can you use one of your other methods here?]
 # output: [what data type goes here, array or hash?]
 
+def grocery_list(str)
+  list = {}
+  list_arr = []
+  list_arr = str.split(' ')
+  list_arr.each do |food|
+    list[food] = 1 
+  end
+ print_list(list)
+end
+
+
+
+
 # Method to add an item to a list
 # input: item name and optional quantity
 # steps: take a list and item as a parameter
@@ -31,3 +44,9 @@
 # steps: use loop(.each) to print items
 # print quantity first then item
 # output: print new list
+def print_list(list)
+  list.each {|food, quantity| puts "#{food}, Qty: #{quantity}"}
+end
+
+puts grocery_list("apples oranges")
+
