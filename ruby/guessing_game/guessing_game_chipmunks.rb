@@ -2,10 +2,10 @@ class GuessingGame
   attr_reader :word,  :new_arr, :guesses, :under_arr,  :guess_limit, :guess_count
     attr_accessor :guess_count
     
-    def initialize(str)
-      @word = wstr.downcase
-      @new_arr = wstr.downcase.split('')
-      @guess_limit = wstr.length 
+    def initialize(word)
+      @word = word.downcase
+      @new_arr = word.downcase.split('')
+      @guess_limit = word.length 
       @guesses = []
       @guess_count = 0 
       @under_arr = []
@@ -22,13 +22,10 @@ class GuessingGame
     
     def comparing_str(guess)
       @guesses.include? guess
-      # if @guesses.include? guess
-      #   puts  "That's a repeat guess. Try again"
-      # end
     end
     
     def string(guess)
-    @word.include? guess
+      @word.include? guess
     end
     
     def check(guess, guesses, under_Arr)
@@ -51,7 +48,7 @@ class GuessingGame
     def end_game(new_arr, under_Arr)
       if under_Arr == new_arr
         @win = true
-      elsif  @guess_count > @guess_limit
+      elsif  @guess_count >= @guess_limit
         @lose = true 
       end
       @win or @lose
@@ -61,22 +58,22 @@ class GuessingGame
       if @win == true
       puts "You won and it took you #{@guess_count} guesses. You found the word #{@word.capitalize}."
       elsif @lose == true
-      puts "You reached the max amount of guesses, #{@guess_limit}, Unfortunately you didnt guess the word which was #{@word.capitalize}" 
+      puts "You reached the max amount of guesses, #{@guess_limit}, Unfortunately you didn't guess the word which was #{@word.capitalize}" 
       end
     end
 end 
 puts "Welcome to the word guessing game!!"
-puts "\nPlayer 1 please enter the word that player2 needs to guess"
+puts "\nPlayer 1 please enter the word that Player2 needs to guess"
 user_word = gets.chomp 
 
 game = GuessingGame.new(user_word)
 
 loop do
-  puts "Player2 put on your thinking cap!"  
+  puts "Player2 lets do this!"  
   puts "Enter your guess:"
   guess =gets.chomp
   if game.comparing_str(guess)
-    puts "That's a repeat guess. Try again"
+    puts "You already guessed that! Try again"
   elsif game.string(guess)
     game.check(guess, game.new_arr, game.under_arr)
     puts "Correct"
@@ -89,8 +86,3 @@ loop do
   break if game.end_game(game.new_arr, game.under_arr)
 end
 game.final_message
-
-
-
-
-
