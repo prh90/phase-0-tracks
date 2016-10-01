@@ -2,7 +2,7 @@ class GuessingGame
   attr_reader :word,  :new_arr, :guesses, :under_arr,  :guess_limit, :guess_count
     attr_accessor :guess_count
     
-    def initialize(wstr)
+    def initialize(str)
       @word = wstr.downcase
       @new_arr = wstr.downcase.split('')
       @guess_limit = wstr.length 

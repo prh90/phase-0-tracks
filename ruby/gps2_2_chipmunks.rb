@@ -19,13 +19,16 @@ def grocery_list(str)
 end
 
 
-
-
 # Method to add an item to a list
 # input: item name and optional quantity
 # steps: take a list and item as a parameter
 # store into hash
 # output: print the new list
+
+def add_item(list, food, quantity = 1)
+  list[food] = quantity
+end
+
 
 # Method to remove an item from the list
 # input: take a list and item that you want to remove
@@ -34,10 +37,19 @@ end
 # if not return nil
 # output: print new list
 
+def del_item(list, food)
+  list.delete_if {|key, value| key == food}
+end
+
+
 # Method to update the quantity of an item
 # input: take list, item desired to update and quantity number
-# steps: take item that needs to be updated and re asign value with quanitity number
+# steps: take item that needs to be updated and reassign value with quantity number
 # output: print new list
+
+def update_quantity
+  
+end
 
 # Method to print a list and make it look pretty
 # input: take a list as parameter
@@ -48,5 +60,7 @@ def print_list(list)
   list.each {|food, quantity| puts "#{food}, Qty: #{quantity}"}
 end
 
-puts grocery_list("apples oranges")
+puts list = grocery_list("apples oranges")
+puts add_item(list, "yogurt")
 
+print_list(list)
