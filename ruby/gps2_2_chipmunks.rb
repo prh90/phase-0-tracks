@@ -39,6 +39,7 @@ end
 
 def del_item(list, food)
   list.delete_if {|key, value| key == food}
+  print_list(list)
 end
 
 
@@ -47,8 +48,9 @@ end
 # steps: take item that needs to be updated and reassign value with quantity number
 # output: print new list
 
-def update_quantity
-  
+def update_quantity(list, item, quantity)
+ list[item] = quantity
+ print_list(list)
 end
 
 # Method to print a list and make it look pretty
