@@ -1,6 +1,6 @@
 #Rspec testing
 
-require_relative 'guessing_game'
+require_relative 'guessing_game_chipmunks'
 
 let(:game) {GuessingGame.new}
 
