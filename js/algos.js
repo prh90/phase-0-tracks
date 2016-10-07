@@ -67,7 +67,7 @@ function newArr(num){
 // ====================================================================
 //                            DRIVER CODE
 for (i = 0; i < 10; i++){
-  var test = newArr(2);
+  var test = newArr(4);
   console.log("The array we generated is:");
   console.log(test);
   console.log("The longest word in the string is:");
