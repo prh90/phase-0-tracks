@@ -101,3 +101,21 @@ end
 
 #=======================================================================
 # Reflection Section
+=begin
+What are the differences between the two different hash syntaxes shown in the state_data file?
+For one key we has a string and for the nest hash we had a symbol
+
+What does require_relative do? How is it different from require?
+Require by itself needs a filepath in words more explicit way to connect files.
+Require_relative just needs a file name and will import data
+
+What are some ways to iterate through a hash?
+We used the .each method or we can use a .sort in a way.
+
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+Trying to pass in instance variables when we didnt need to since they are available throughout the class
+
+What concept did you most solidify in this challenge?
+.each I desperately needed to brush up on it.
+also hash(nested hash)
+=end
