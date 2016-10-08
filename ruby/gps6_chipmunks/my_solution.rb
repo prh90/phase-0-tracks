@@ -20,27 +20,30 @@ class VirusPredictor
 
 # Calls the both methods predicted_deaths and speed_of_spread
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
-  private
+# We use this private method when we do not want certain methods to call other methods.
+   private
 
 # Checks information passed to match certain condition and save it into variable
 # number of deaths and prints it to console
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
+      fraction =  0.4
     elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
+      fraction = 0.3
     elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
+      fraction = 0.2
     elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
+      fraction = 0.1
     else
-      number_of_deaths = (@population * 0.05).floor
+      fraction = 0.05
     end
+
+    number_of_deaths = (@population * fraction).floor
 
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
@@ -48,7 +51,8 @@ class VirusPredictor
 
 # Again checks information and meets certain conditions to assign to variable and
 # prints information to console
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread
+    #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -77,7 +81,7 @@ end
  # initialize VirusPredictor for each state
 
 STATE_DATA.each do |state, info|
-  virus_scan = VirusPredictor.new (state, info[:population_density], info[:population])
+  virus_scan = VirusPredictor.new(state, info[:population_density], info[:population])
   virus_scan.virus_effects
 end
 
