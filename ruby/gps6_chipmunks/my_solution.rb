@@ -1,12 +1,13 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself, with: Sidah ].
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# Open the file named to connect and use the data
+# Both are in same directory/ Imports the data from other file.
 require_relative 'state_data'
+# Require by itself needs a filepath in words more explicit way to connect files.
 
 class VirusPredictor
 
