@@ -1,6 +1,16 @@
 #population density is number of people per square mile as of 2012
 #this data is updated every year with estimates from a 10 year census
 
+=begin
+
+ STATE_DATA = {
+  key(string) => Value{key:(symbol) value, Key: value}
+ }
+  
+
+The hash is a constant, keep information in hash protected
+=end
+
 
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},
