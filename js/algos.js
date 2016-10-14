@@ -6,9 +6,15 @@
 //print out index 0
 
 function find(arr){
-  console.log(arr.sort(function(a, b) { return b.length - a.length})[0]);
+  // console.log(arr.sort(function(a, b) { return b.length - a.length})[0]);
+  max_index = 0;
+  for (i = 1; i < arr.length; i++){
+    if(arr[i].length > arr[max_index].length)
+      max_index = i;
+  }
+  console.log(arr[max_index]);
 }
-// find(["long phrase","longest phrase","longer phrase"]);
+ find(["long phrase","longest phrase","longer phrase"]);
 
 //____________________________________________________________________________
 //Take two objects
