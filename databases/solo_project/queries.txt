@@ -1,0 +1,62 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
+\pard\f0\fs22 sqlite> SELECT * FROM players;\par
+1|Carlos Pena|27|1\par
+2|Orbelin Pineda|7|1\par
+3|Javier Hernandez|7|2\par
+4|Andrea Pirlo|21|3\par
+_________________________________________________________________\par
+
+\pard\par
+sqlite> UPDATE players\par
+   ...> SET Name='Orbelin Pineda', Number=7\par
+   ...> WHERE Name='Alan Pulido';\par
+sqlite> SELECT * FROM players, teams WHERE players.team_id = teams.id;\par
+1|Carlos Pena|27|1|1|Chivas de Guadalajara\par
+2|Orbelin Pineda|7|1|1|Chivas de Guadalajara\par
+3|Javier Hernandez|7|2|2|Bayer Leverkusen\par
+4|Andrea Pirlo|21|3|3|New York FC\par
+
+\pard _________________________________________________________________\par
+\par
+
+\pard sqlite> SELECT * FROM players, teams WHERE players.team_id = teams.id;\par
+1|Carlos Pena|27|1|1|Chivas de Guadalajara\par
+2|Alan Pulido|9|1|1|Chivas de Guadalajara\par
+3|Javier Hernandez|7|2|2|Bayer Leverkusen\par
+4|Andrea Pirlo|21|3|3|New York FC\par
+_________________________________________________________________\par
+
+\pard\par
+sqlite> SELECT players.name, teams.name FROM players JOIN teams ON players.team_id = teams.id;\par
+Carlos Pena|Chivas de Guadalajara\par
+Alan Pulido|Chivas de Guadalajara\par
+Javier Hernandez|Bayer Leverkusen\par
+Andrea Pirlo|New York FC\par
+_________________________________________________________________\par
+trying different join but cannot get them to work
+
+sqlite> SELECT Name
+   ...> FROM players
+   ...> INNER JOIN teams
+   ...> ON players.Name=teams.name;
+Error: ambiguous column name: Name
+sqlite> SELECT Name
+   ...> FROM players
+   ...> LEFT JOIN teams
+   ...> ON players.Name=teams.name;
+Error: ambiguous column name: Name
+DELETE AN ITEM\par
+sqlite> DELETE FROM players\par
+   ...> WHERE Name='Carlos Pena';\par
+sqlite> SELECT * FROM players;\par
+2|Orbelin Pineda|7|1\par
+3|Javier Hernandez|7|2\par
+4|Andrea Pirlo|21|3\par
+\par
+\par
+\par
+\par
+\par
+}
+ 
