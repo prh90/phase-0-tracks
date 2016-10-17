@@ -1,0 +1,12 @@
+Prints out all tables but does not join them with only relevant data. 
+I was thinking all of something like this 
+--sqlite> SELECT * FROM reviews, users.id, businessess.id JOIN reviews.user_id = users.id AND reviews.business_id = businessess.id;--
+
+This is what I got.
+sqlite>  SELECT * FROM reviews, users, businessess WHERE reviews.user_id = users.id AND reviews.business_id = businessess.id;
+1|5|great food!|1|1|1|Bradfod|Pitt|1|Grundy Hollow Wedding Chapel
+
+
+Second question
+sqlite> select users.first, businessess.name, reviews.comment, reviews.stars from reviews inner join users on reviews.user_id=users.id inner join businessess on reviews.business_id=businessess.id;
+Bradfod|Grundy Hollow Wedding Chapel|great food!|5
