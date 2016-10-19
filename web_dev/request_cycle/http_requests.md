@@ -1,7 +1,7 @@
-HTTP = Hypertext Transfer Protocol
+## HTTP = Hypertext Transfer Protocol
 
 
-What are some common HTTP status codes?
+## What are some common HTTP status codes?
 -200 OK
 -300 Multiple Choices
 -301 Moved Permanently
@@ -19,12 +19,12 @@ What are some common HTTP status codes?
 -550 Permission denied
 ____________________________________________
 
-What is the difference between a GET request and a POST request? When might each be used?
+## What is the difference between a GET request and a POST request? When might each be used?
 
 GET- Requests data from a specified source
 POST- Submits data to be processed to a specified resource.
 ____________________________________________
 
-What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
+## What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
 
 A cookie is a small piece of data sent from a website to be stored into users web browser. Designed to keep track of useful info from the users actions.
