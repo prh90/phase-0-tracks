@@ -4,6 +4,6 @@ Plan to use the jquery book that I bought in phase 0. I feel like google will pl
 ___________________________________________________
 
 ## Project Psuedocode
-I want to create something simple, I think I would want to create a calculator, simple sweet and a good way to test my knowledge.
+I want to create something simple, I think I would want to create a menu, simple sweet and a good way to test my knowledge on the fly.
 ___________________________________________________
 
