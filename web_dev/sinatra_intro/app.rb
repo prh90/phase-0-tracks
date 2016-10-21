@@ -1,6 +1,9 @@
 # require gems
 require 'sinatra'
+require 'sinatra/reloader'
 require 'sqlite3'
+require 'faker'
+
 
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
@@ -18,6 +21,17 @@ get '/about/:person' do
   person = params[:person]
   "#{person} is a programmer, and #{person} is learning Sinatra."
 end
+
+get '/contact' do
+  address = ""
+  address << Faker::Address.street_address
+  address << Faker::Address.city
+  address << Faker::Address.state_abbr
+  address << Faker::Address.zip_code
+  address
+end
+
+get '/'
 
 get '/:person_1/loves/:person_2' do
   "#{params[:person_1]} loves #{params[:person_2]}"
