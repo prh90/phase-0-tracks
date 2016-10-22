@@ -24,14 +24,21 @@ end
 
 get '/contact' do
   address = ""
-  address << Faker::Address.street_address
-  address << Faker::Address.city
-  address << Faker::Address.state_abbr
-  address << Faker::Address.zip_code
+  address << "#{Faker::Address.street_address}"
+  address << "\n#{Faker::Address.city},"
+  address << "\n#{Faker::Address.state_abbr}"
+  address << "\n#{Faker::Address.zip_code}"
   address
 end
 
-get '/'
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
 
 get '/:person_1/loves/:person_2' do
   "#{params[:person_1]} loves #{params[:person_2]}"
@@ -57,4 +64,9 @@ end
 get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
+end
+
+get '/add' do
+  c = params[:a].to_i + params[:b].to_i
+  c.to_s
 end
